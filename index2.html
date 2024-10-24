@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宋韵卿裳——发型店</title>
+    <style>
+        /* 页面样式初始化 */
+        html,body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* 设置类为 container 的 div 容器样式,用于包含整个内容 */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;
+            position: relative;
+            margin: 0 auto;
+            text-align: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* 设置类为 bg 的 div 背景容器样式,用于添加页面中其它所有元素 */
+        .bg {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        /* 设置类为 bgimg 的背景 img 元素的样式,用于显示背景图像 */
+        .bgimg {
+            max-width: 100%;
+            max-height: 100%;
+            height: 100vh;
+		}
+
+        /* 设置类为 title 的标题 img 元素的样式,用于显示标题图像 */
+        .title{
+            position: absolute;
+            width:100%;
+            z-index: 5;
+            top:2.5%;
+        }
+        
+        /* 设置类为 back 的返回键 img 元素的样式,用于点击返回按钮时触发返回操作 */
+        .back{
+            position: absolute;
+            width: 15%;
+            left:0;
+            top:3%;
+            z-index: 7;
+        }
+
+        /* 设置类为 person 的 div 人物容器样式,用于存放人物头部和身体的 img 元素 */
+        .person{
+            position: absolute;
+            height: 90%;
+            top:8%;
+            left:6%;
+        }
+
+        /* 设置人物头部 img 元素样式 */
+        #head{
+            position: absolute;
+            height: 100%;
+            z-index: 4;
+        }
+
+        /* 设置人物身体 img 元素样式 */
+        #body{
+            position: absolute;
+            height: 100%;
+            left: -1%;
+            z-index: 2;
+        }
+
+        /* 设置类为 window 的商品展示窗口 img 元素样式,用于显示商品展示窗口，放置发型图片供用户选择更换 */
+        .window{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            z-index: 4;
+        }
+
+        /* 设置类为 Frame 的外层容器的定位方式,水平滚动条等样式 */
+        .Frame{
+            position: absolute;
+            bottom: 2%;
+            left: 0;
+            overflow-x: hidden;
+            z-index: 4;
+        }
+
+        /* 设置类为 frame 的内层容器水平滚动条,鼠标指针,支持触摸滚动等样式 */
+        .frame{
+            position: relative;
+            cursor: grab;
+            overflow-x: hidden;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            z-index: 5;
+        }
+
+        /* 设置发型图片背景图像,外边距,鼠标指针等样式 */
+        .hair{
+            background-image:url('./images/basemap.png');
+            background-origin: content-box ;
+            background-size:100% 100%;
+            background-repeat: no-repeat;
+            width: 28%;
+            margin: 10px 9px;
+            cursor: pointer;
+            transition: left 0.3s ease-out;/* 设置 left 属性过渡效果为 0.3 秒渐出 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container"><!-- 包含整个内容 -->
+        <div class="bg"><!-- 用于添加页面中其它所有元素 -->
+            <img class="bgimg" src="./images/hair/hair bg.jpg"><!-- 背景 -->
+            <img class="title" src="./images/hair/hair title.png"><!-- 标题 -->
+            <img class="back" src="./images/back.png"><!-- 返回键 -->
+
+            <div class="person"><!-- 人物 -->
+                <img id="head" src="./images/startHair.png"><!-- 人物头部 -->
+                <img id="body" src="./images/person.png"><!-- 人物身体 -->
+            </div>
+
+            <img class="window" src="./images/window1.png"><!-- 商品展示窗口 -->
+            <!-- 外层容器，具有 Frame 类 -->
+            <div class="Frame">
+                <!-- 内层容器，具有 frame 类和 id 为 scrollable-div -->
+                <div class="frame" id="scrollable-div">
+                    <!-- 具有 hair 类的图片，并指定了图片源 -->
+                    <img class="hair" src="./images/hair/shuangyaji.png">
+                    <img class="hair" src="./images/hair/shuangpanji.png">
+                    <img class="hair" src="./images/hair/duomaji.png">
+                    <img class="hair" src="./images/hair/chaotianji.png">
+                    <img class="hair" src="./images/hair/panlongji.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
